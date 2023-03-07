@@ -36,8 +36,10 @@
         </button>
       </div>
       <div class="g-button-group margin_t_10 right">
-        <input type="file" class="g-button" style="margin-right: 5px;" @click="saveMenu" />
-          <label>Upload</label>
+        <input type="file"
+               accept="application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+               @change="handleFileUpload" />
+        <label>Upload</label>
       </div>
     </form>
 
@@ -96,6 +98,25 @@ export default {
     itemValue(item, column) {
       // console.log("Here is the item hasValue: " + item[column.toLowerCase()])
       return item[column.toLowerCase()];
+    },
+    async handleFileUpload(change) {
+      const file = event.target.files[0];
+      const formData = new FormData();
+      formData.append('file', file);
+      await fetch('/api/rates/upload', {
+        method: 'POST',
+        body: formData
+      })
+          .then((response) => response.text())
+          .then(data => {
+            const response = JSON.parse(data)
+            console.log("Here is the response: " + data)
+            alert("New menu was added successfully")
+            // Handle the server response
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
     },
     async saveMenu(){
       if(this.name.length === 0 || this.link.length === 0 || this.role.length === 0) {

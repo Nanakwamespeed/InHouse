@@ -14,4 +14,8 @@ public class ExchangeRateService {
     public List<ExchangeRateModel> getRates() {
         return (List<ExchangeRateModel>) repo.findAll();
     }
+
+    public Integer handleFileUpload(String flag, String country, Float selling, Float buying ){
+        return repo.uploadRates(flag, country, selling, buying);
+    }
 }
