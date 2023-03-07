@@ -35,6 +35,10 @@
           <label>Save</label>
         </button>
       </div>
+      <div class="g-button-group margin_t_10 right">
+        <input type="file" class="g-button" style="margin-right: 5px;" @click="saveMenu" />
+          <label>Upload</label>
+      </div>
     </form>
 
     <div class="row margin_t_20">
