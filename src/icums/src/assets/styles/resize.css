@@ -1,0 +1,291 @@
+@CHARSET "UTF-8";
+
+/********** BUTTON AREA **********/
+.button_area 	  {position:relative; width:100%;height:30px;margin:7px 0;}
+.icon_button_area {position:relative; width:100%;height:20px;margin:7px 0;}
+.button_area .button_left_area{position:absolute;color:#659e1f;margin-top:0px;}
+.button_area .button_right_area{width:100%;text-align:right;}
+.button_area .button_left_area input{margin-right:3px;margin-bottom:3px;position:relative;z-index:11;}
+.button_area .button_right_area input{margin-left:3px;margin-bottom:3px;position:relative;z-index:10;}
+
+/********** PAGING AREA **********/
+.paging_area {clear:both;width:100%;}
+.paging_area .paging_left{float:left;text-align:left;width:20%;}
+.paging_area .paging_center{float:left;text-align:center;*width:58%;width:60%;}
+.paging_area .paging_right{float:left;text-align:right;;width:20%;}
+.paging_area .paging_left .page_count{margin-left:2px;margin-right:2px;color:#c93328;font-weight:bold;}
+.paging_area .paging_right .page_count{margin-left:2px;margin-right:2px;color:#c93328;font-weight:bold;}
+
+.paging_bottom {height:30px;text-align:center;font-size:12px;font-weight:bold;}
+.paging_bottom .current_page{color:red;padding:3px;}
+
+/***********************
+add css
+************************/
+.h-table{
+	position: absolute;
+	width: 100%;
+	overflow-x: auto;
+}
+.s-button{
+	margin:0;
+}
+.text_input{
+	margin:0;
+}
+h3{
+	margin-top:20px;
+}
+h3{position:relative;margin-top:20px;margin-bottom:3px;padding-left:16px;font-size:1.34em;color:#000}
+/* h3:before{display:block;position:absolute;left:0;top:50%;background-image:url(../../images/sub_m6.png);background-position:0 -22px;width:12px;height:12px;-webkit-transform:translateY(-7px);transform:translateY(-7px)} */
+textarea {
+    box-sizing: border-box;
+    padding: 1px 0 0 8px;
+    border: 1px solid #e2e2e2;
+}
+table.table-ellipsis{
+	table-layout: fixed;
+}
+td.table-ellipsis{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis
+}
+.span-textarea {
+  overflow: auto;
+  vertical-align: top !important;
+  text-transform: none;
+  color: inherit;
+  font: inherit;
+  outline: 0;
+  margin: 0;
+  white-space: pre-wrap !important;
+  word-wrap: break-word;
+}
+select.label {
+    padding: 0 0 2px 8px;
+    border:0;
+    font-weight:600;
+    -webkit-padding-end: 24px;
+    -moz-padding-end: 24px;
+    line-height: 25px;
+    font-family: inherit;
+    background: #f8f8f8 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAYAAAD68A/GAAAANElEQVQYV2Ncvnz5fwYiACPRCkGGEVIcGRnJyAizFZdikCKQGrhCbCbDFGEoRFaMrAgkDgB1ORXvQyzzggAAAABJRU5ErkJggg==) no-repeat right 8px center;
+    background-size: auto 6px;
+    /cursor: pointer;
+    min-width: 50px;
+}
+textarea.readonly {
+    cursor: not-allowed;
+    background: #f8f8f8;
+    border-color: #ebebeb;
+    opacity: 1;
+}
+select.readonly {
+    cursor: not-allowed;
+    background: #f8f8f8;
+    border-color: #ebebeb;
+    opacity: 1;
+}
+.cursor{
+	cursor:pointer
+}
+
+input:disabled {
+	cursor: not-allowed;
+    background: #f8f8f8;
+    border-color: #ebebeb;
+    opacity: 1;
+}
+
+/***********************
+file progressbar
+************************/
+.progress {
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #5cb85c;
+  /*.box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+  .transition(width .6s ease);*/
+}
+
+/***********************
+messagePupup button position
+************************/
+.ui-dialog .ui-dialog-buttonpane {
+    text-align: center;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: none;
+}
+.ui-button-text{
+	padding: inherit !important;
+}
+
+.ui-dialog-titlebar {
+    margin: 0;
+    background-color: #4d525a;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.ui-widget-header .ui-icon {
+    display: inline-block;
+    /* background: url(../images/btn_close.png) no-repeat center center; */
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    position: absolute;
+    right: 17px;
+    top: 10px;
+    width: 20px;
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    font-size: 0 !important;
+}
+
+#messagePopup:before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0;
+    margin-left: -1em;
+    vertical-align: middle;
+}
+.ui-dialog{box-shadow:6px 6px 6px 0px rgba(0,0,0,.1)}
+/***********************
+validate tooltip
+************************/
+.ui-tooltip {
+	padding: 2px 4px;
+	position: absolute;
+	z-index: 9999;
+	max-width: 300px;
+	-webkit-box-shadow: 0 0 1px #aaa;
+	box-shadow: 0 0 1px #aaa;
+}
+.ui-state-error {
+    border: 1px solid red !important;
+    /* background: #fbf9ee url(../images/jqueryui/ui-bg_glass_55_fbf9ee_1x400.html) 50% 50% repeat-x !important; */
+    color: #363636 !important;
+    background: #fbeeee !important;
+}
+
+/***********************
+summernote: richEditor
+************************/
+.note-editor {
+    position: relative;
+    width: 100%;
+}
+.note-modal-header {
+    padding: 10px 20px 10px 20px !important;
+    border: 0px solid #ededef !important;
+    background-color: #4d525a !important;
+}
+button.snclose {
+    padding: 15px 0 !important;
+    color: #ffffff !important;
+}
+.note-modal-title {
+    margin: 0;
+    font-size: 26px;
+    line-height: 1.4;
+    color: rgba(255,255,255,.8) !important;
+    width: 200px;
+}
+.note-modal-body {
+    position: relative;
+    padding: 10px 30px !important;
+}
+.note-image-input {
+	padding: 0px !important;
+}
+.note-modal-footer {
+    height: 60px !important;
+    padding: 10px;
+    text-align: center;
+}
+
+/***********************
+table
+************************/
+table.no-border td {
+	border: 0;
+}
+
+table.no-border td, table.no-border th {
+  border: none !important;
+}
+
+/** td 내에 테이블 삽입시 지정. 바깥 border가 없는 테이블 */
+table.inborder {
+  padding: 0 !important;
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+table.inborder td, table.inborder th {
+  border: 1px solid #e5e5e5;
+}
+
+/** 세로 border만 있는 테이블 */
+table.inborder-vertical {
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+table.inborder-vertical td, table.inborder-vertical th {
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
+/** 상단 border가 없는 테이블. 테이블에 테이블을 붙이는 경우 지정 */
+table.top-no-border td, table.top-no-border th {
+  border-top: 0 !important;
+  border-bottom: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+}
+
+/** td별 border를 없애는 경우 지정. border삭제시에는 좌우 및 상하의 셀의 border를 함께 지워야 함 */
+td.left-no {
+  border-left: 0 !important;
+}
+
+td.right-no {
+  border-right: 0 !important;
+}
+
+td.top-bottom-no {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
+td.top-no {
+  border-top: 0 !important;
+}
+
+td.bottom-no {
+  border-bottom: 0 !important;
+}
+
+td.no-padding {
+  padding: 0 !important;
+}
