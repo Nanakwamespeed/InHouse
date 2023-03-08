@@ -63,8 +63,8 @@
                                     </routerLink>
                                 </li>
                                 <li class="nav__item">
-                                    <routerLink to="/jointinspection" class="nav__link">
-                                        Joint Inspection
+                                    <routerLink to="/tracking" class="nav__link">
+                                        Tracking
                                     </routerLink>
                                 </li>
                                 <li class="nav__item">

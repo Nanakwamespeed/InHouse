@@ -14,6 +14,7 @@ import SingleWindowView from "@/views/SingleWindowView.vue";
 import ClearanceView from "@/views/ClearanceView.vue";
 import MenuEditView from "@/views/MenuEditView.vue";
 import RatesView from "@/views/RatesView.vue";
+import TrackingView from "@/views/TrackingView.vue";
 
 const routes = [
   {
@@ -90,6 +91,11 @@ const routes = [
     path: '/rates',
     name: 'Exchange Rates',
     component: RatesView
+  },
+  {
+    path: '/tracking',
+    name: 'Tracking',
+    component: TrackingView
   }
 ]
 
