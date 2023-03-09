@@ -12,7 +12,8 @@ export default createStore({
     theme: '',
     loggedIn: false,
     themeForDefault: '',
-    exchangeRates: []
+    exchangeRates: [],
+    track: []
   },
   getters: {
     getUser: state => state.user,
@@ -22,6 +23,7 @@ export default createStore({
     getUserStatus: state => state.loggedIn,
     getDefaultTheme: state => state.themeForDefault,
     getExchangeRates: state => state.exchangeRates,
+    getTracking: state => state.track
   },
   mutations: {
     setUser (state, user) {
@@ -44,6 +46,9 @@ export default createStore({
     },
     setUserStatus (state, loggedIn) {
       state.loggedIn = loggedIn
+    },
+    setTracking(state, track){
+      state.track = track
     },
     RESET_STATE(state) {
       // set the state properties to their initial values

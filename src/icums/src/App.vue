@@ -31,6 +31,7 @@
           @themechange="handleThemeChangeEvent"
           :menus="menus"
           :rates="rates"
+          :tracking="tracking"
       />
       <login-modal
           v-if="showModal"
@@ -118,10 +119,12 @@ export default {
       password: '',
       item: [],
       themebackground: '',
-      rates: []
+      rates: [],
+      tracking: []
     }
   },
   mounted() {
+    this.fetchTracking()
     this.fetchExchangeRates()
     this.getTheme()
     this.envDetection()
@@ -209,6 +212,15 @@ export default {
               this.rates = JSON.parse(data)
               this.$store.commit('setExchangeRates', this.rates)
             })
+    },
+    async fetchTracking(){
+      const url = new URL('http://localhost:8080/api/tracking/getAll');
+      await fetch(url)
+          .then((response) => response.text())
+          .then((data) => {
+            this.tracking = JSON.parse(data)
+            this.$store.commit('setTracking', this.tracking)
+          })
     },
     async fetchMenuListByRole() {
 
