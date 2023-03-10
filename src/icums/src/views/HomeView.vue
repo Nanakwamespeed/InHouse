@@ -42,34 +42,15 @@
         <div class="tab">
           <div class="tab__icon">
             <ul>
-              <li id="tab1" class="btnCon"><input type="radio" checked="" name="tabmenu"
-                                                  id="tabmenu1">
+              <li id="tab1" class="btnCon"><input type="radio" checked="" name="tabmenu" id="tabmenu1">
                 <label for="tabmenu1" style="border-right: 1px solid #ddd">Tracking</label>
                 <div class="tabCon">
                   <ul class="tab-cont1">
-                    <li>
+                    <li v-for="track in tracking">
                       <a href="#">
-                        <p>Cargo Tracking</p>
+                        <p>{{track.icon_name}}</p>
                       </a>
                     </li>
-                    <li>
-                      <a href="#">
-                        <p>Vessel Arrival</p>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <p>Vessel Schedule</p>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <p>Sea Manifest Status</p>
-                      </a>
-                    </li>
-
-                    <li><a href="#">BOE Status</a></li>
-
                   </ul>
                 </div>
               </li>
@@ -915,7 +896,7 @@
 
 export default {
   name: 'HomeView',
-  props: ['rates'],
+  props: ['rates', 'tracking'],
   data () {
     return {
       columns: ["Country", "Selling", "Buying"]
