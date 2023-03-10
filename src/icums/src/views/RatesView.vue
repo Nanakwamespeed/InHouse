@@ -91,7 +91,7 @@ export default {
       flag: '',
       selling: '',
       buying: '',
-      columns: ["Country", "Selling", "Buying"]
+      columns: ["Country", "Selling", "Buying", "Created_By", "First_Created", "Updated_By", "Last_Updated" ]
     }
   },
   methods: {
@@ -112,7 +112,7 @@ export default {
             const response = JSON.parse(data)
             console.log("Here is the response: " + data)
             alert("New menu was added successfully")
-            // Handle the server response
+            location.reload();
           })
           .catch(error => {
             console.error('Error:', error);

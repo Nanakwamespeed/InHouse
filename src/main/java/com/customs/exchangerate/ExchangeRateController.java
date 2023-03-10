@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -34,10 +35,13 @@ public class ExchangeRateController {
             for (Row row : sheet) {
                 String flag = row.getCell(0).getStringCellValue();
                 String country = row.getCell(1).getStringCellValue();
-                float selling = (float) row.getCell(2).getNumericCellValue();
-                float buying = (float) row.getCell(3).getNumericCellValue();
+                String country_code = row.getCell(2).getStringCellValue();
+                float selling = (float) row.getCell(3).getNumericCellValue();
+                float buying = (float) row.getCell(4).getNumericCellValue();
 
-                Integer response = service.handleFileUpload(flag, country, selling, buying);
+                Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
+                Integer response = service.handleFileUpload(flag, country, selling, buying, country_code, timestamp);
                 System.out.println(response);
             }
         } catch (IOException e) {
